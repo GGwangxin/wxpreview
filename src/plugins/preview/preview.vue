@@ -81,13 +81,13 @@
         let options = Object.assign({
           index: index,
           getThumbBoundsFn (index) {
+            let el=el||document
             let thumbnail = el.querySelectorAll('.preview-img')[index]
             let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
             let rect = thumbnail.getBoundingClientRect()
             return {x: rect.left, y: rect.top + pageYScroll, w: rect.width}
           }
         }, params)
-        console.log(this.$el)
         this.photoswipe = new PhotoSwipe(this.$el, UI, list, options)
         this.photoswipe.init()
       },
