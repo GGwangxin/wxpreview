@@ -78,10 +78,12 @@
         shareEl: false,
         tapToClose: true
       }) {
+         let target=el
         let options = Object.assign({
           index: index,
           getThumbBoundsFn (index) {
-            let el=el||document
+
+            let el=target||document
             let thumbnail = el.querySelectorAll('.preview-img')[index]
             let pageYScroll = window.pageYOffset || document.documentElement.scrollTop
             let rect = thumbnail.getBoundingClientRect()

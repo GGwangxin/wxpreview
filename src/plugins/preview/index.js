@@ -5,7 +5,6 @@ export default {
     let Preview = Vue.extend(PreviewComponent)
     if (!$vm) {
       $vm = new Preview({el: document.createElement('div')})
-      console.log($vm.$el)
       document.body.appendChild($vm.$el)
     }
     const preview = {
